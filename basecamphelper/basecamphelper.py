@@ -102,10 +102,11 @@ def main():
 	projectids = get_all_groups(raw_input(">>> "))
 
 	
+	print "\n\n"
 	for index, app in enumerate(applist):
 		print "%s. %s" % (index, app)
 	
-	appchoice = int(raw_input("\n\nWhich function to launch: "))
+	appchoice = int(raw_input("Which function to launch: "))
 
 	if appchoice == 0:
 		list_to_add = raw_input("Comma-seperated list of email addresses: ").split(", ")		

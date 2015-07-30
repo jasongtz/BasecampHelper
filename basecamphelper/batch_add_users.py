@@ -1,7 +1,6 @@
 # Create Basecamp users
 
 import requests, json, csv, os
-import basecamphelper
 
 def readfile():
 
