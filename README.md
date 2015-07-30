@@ -32,4 +32,4 @@ Body:
 Upcoming
 ------
 
-- Batch add a group of users to a project (built, in testing)
+~~- Batch add a group of users to a project (built, in testing)~~ - resolved
