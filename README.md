@@ -25,11 +25,11 @@ Email Subject:
 > POST, {search string}, {New Post Title}
 
 Body: 
-> plain text, message content
+> plain text message content
 
 
 
 Upcoming
 ------
 
-- Batch add a group of users to a project (built, in testing)
+~~- Batch add a group of users to a project (built, in testing)~~ - resolved
