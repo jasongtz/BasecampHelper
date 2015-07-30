@@ -25,7 +25,7 @@ Email Subject:
 > POST, {search string}, {New Post Title}
 
 Body: 
-> plain text, message content
+> plain text message content
 
 
 
