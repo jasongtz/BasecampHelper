@@ -23,8 +23,9 @@ def get_todos(todolist, project_id):
 	
 	items_due = [] # list of tuples
 	for j in todos:
-		items_due.append(j['content'],
-			 datetime.datetime.strptime(j['due_on'], "%Y-%m-%d"))
+		items_due.append((j['content'],
+			 datetime.datetime.strptime(j['due_on'], "%Y-%m-%d")))
+	return items_due
 
 def main():
 	with open('basecamphelper/config.json', 'r')  as fp:
@@ -42,7 +43,7 @@ def main():
 
 	list_id, project_id = get_todo_list()
 	due_list = get_todos(list_id, project_id)
-
+	print due_list
 
 if __name__ == "__main__":
 	main()
