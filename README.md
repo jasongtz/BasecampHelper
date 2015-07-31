@@ -17,6 +17,13 @@ This allows users to send an email to a given address, specifying a search query
 
 -----
 
+### Using `basecamphelper.py`
+
+Run `python basecamphelper.py`, and follow the console prompts. Enter a search query to get a list of projects with the query in their titles, and choose an action to perform on them.
+
+------
+
+
 ### Using `autopost` Email (Syntax)
 
 The email must be formatted exactly as below for the emails to be picked up by `PyEmailWatcher`.
