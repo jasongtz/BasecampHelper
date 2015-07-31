@@ -33,3 +33,4 @@ Upcoming
 ------
 
 ~~- Batch add a group of users to a project (built, in testing)~~ - resolved
+- When PyEmailWatcher is on PyPI, change from submodule to setup.py or requirements.txt
