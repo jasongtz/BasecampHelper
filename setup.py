@@ -12,7 +12,8 @@ setup(
     author="Jason",
 
     # Packages
-    packages=['basecamphelper'],
+    packages=['basecamphelper',
+    	'PyEmailWatcher'],
 
     # Include additional files into the package
     include_package_data=True,
