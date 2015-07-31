@@ -81,7 +81,7 @@ def post_message(projectid, title, body):
 	message['content'] = body
 	
 	response = requests.post(url + "/api/v1/projects/%s/messages.json" % projectid, \
-		auth=(creds[0], creds[1]), data=json.dumps(message), headers=headers)
+		auth=(creds[0], creds[1]), data=json.dumps(message, encoding='utf8'), headers=headers)
 
 	if "201" in str(response):
 		print "Posted message to: %s" % projectid
