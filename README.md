@@ -12,7 +12,7 @@ The main `basecamphelper.py` script can be run from the command line to perform 
 
 The main function involves searching all projects in a given account for a string in the title, and performing the given action on every project that matched the search.
 
-The `autopost.py` can be set as a `cron` job to automatically run. In my install, this is set to run in `crontab` once per minute. It relies on the [`PyEmailWatcher`](https://github.com/jasongtz/PyEmailWatcher) submodule to monitor an inbox.
+The `autopost.py` can be set as a `cron` job to automatically run. In my install, this is set to run in `crontab` once per minute. It relies on the [`PyEmailWatcher`](../../../PyEmailWatcher) submodule to monitor an inbox.
 This allows users to send an email to a given address, specifying a search query, and have the message posted to every project that matches the search.
 
 -----
