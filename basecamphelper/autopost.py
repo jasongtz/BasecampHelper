@@ -33,7 +33,7 @@ def main():
 		elif email.get_content_maintype() == 'multipart':
 			for part in email.walk():
 				if part.get_content_maintype() == 'text':
-					body = part.get_payload(decode=True)
+					body = part.get_payload(decode=True).decode('utf-16')
 					break
 	
 		projects = b.get_all_groups(query)
