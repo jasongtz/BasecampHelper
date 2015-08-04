@@ -29,12 +29,11 @@ def main():
 		header, query, title = email['subject'].split(", ")
 	
 		if email.get_content_maintype() == 'text':
-			body = email.get_payload()
+			body = email.get_payload(decode=True) # added decode=True
 			body = decode_email(body)
 
 		elif email.get_content_maintype() == 'multipart':
 			for part in email.walk():
-				print part.get_content_maintype()
 				if part.get_content_maintype() == 'text':
 					body = part.get_payload(decode=True)
 					body = decode_email(body)
@@ -44,7 +43,7 @@ def main():
 		for project_id in projects:
 			b.post_message(project_id, title, body)
 		
-#		login.confirm(uid, email)
+		login.confirm(uid, email)
 	login.logout()
 
 def decode_email(text):
@@ -55,6 +54,7 @@ def decode_email(text):
 	except UnicodeDecodeError:
 		body = unicode(text, 'Cp1252')
 	return body
+	### Consider using part.get_content_charset() and decoding that
 
 if __name__ == "__main__":
 	main()
