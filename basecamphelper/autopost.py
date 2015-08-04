@@ -30,19 +30,31 @@ def main():
 	
 		if email.get_content_maintype() == 'text':
 			body = email.get_payload()
+			body = decode_email(body)
+
 		elif email.get_content_maintype() == 'multipart':
 			for part in email.walk():
+				print part.get_content_maintype()
 				if part.get_content_maintype() == 'text':
-					body = part.get_payload(decode=True).decode('utf-16')
+					body = part.get_payload(decode=True)
+					body = decode_email(body)
 					break
-	
+		
 		projects = b.get_all_groups(query)
 		for project_id in projects:
 			b.post_message(project_id, title, body)
 		
-		login.confirm(uid, email)
+#		login.confirm(uid, email)
 	login.logout()
-	
+
+def decode_email(text):
+	if '<html>' in text.splitlines()[0]:
+		return text
+	try:
+		body = unicode(text, 'utf8')
+	except UnicodeDecodeError:
+		body = unicode(text, 'Cp1252')
+	return body
 
 if __name__ == "__main__":
 	main()
