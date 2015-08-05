@@ -34,7 +34,28 @@ Email Subject:
 Body: 
 > plain text message content
 
+--------
 
+### Using `autowatchduedate`
+
+The config file should be:
+
+```json
+{
+	"account_id":123456789,
+	"user-agent":"BasecampHelper",
+	"username":"basecamphelper@github.com",
+	"password":"asdfasdf",
+	"imap_server":"server.server.com",
+	"smtp_server":"smtp.server.com",
+	"smtp_port":587,
+	"todolist_name":"search_string"
+	}
+```
+
+In Basecamp, write an email address as a comment on a to-do item.
+Set `todue.py` as a cron task, and the email address from the comment will be sent a message when the to-do passes it's due date.
+We use this as a simple method to track equipment on loan, and automatically email the person who's checked it out when it's due back.
 
 Upcoming
 ------
