@@ -2,11 +2,11 @@
 
 from PyEmailWatcher.pyemailwatcher.pyemailwatcher import Watcher
 import basecamphelper as b
-import json
+import json, os
 
 def main():
 
-	with open('basecamphelper/config.json', 'r')  as fp:
+	with open(os.path.join(os.path.dirname(__file__), 'config.json'), 'r')  as fp:
 		config = json.loads(fp.read())
 
 	b.url =  "https://basecamp.com/%s" % config['account_id']

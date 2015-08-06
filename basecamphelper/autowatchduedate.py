@@ -53,7 +53,7 @@ def email_loaner(item):
 	login.connect()
 	due = item['due_on'].strftime('%d-%m-%Y')
 
-	with open('basecamphelper/message.txt', 'r') as fp:
+	with open(os.path.join(os.path.dirname(__file__), 'message.txt'), 'r') as fp:
 		message = fp.read()
 	message = message.replace('{{ item }}', item['name']).replace('{{ due_date }}', due)
 	print item['last_comment']
