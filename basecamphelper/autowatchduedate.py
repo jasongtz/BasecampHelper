@@ -2,7 +2,7 @@
 
 import basecamphelper as b
 from PyEmailWatcher.pyemailwatcher.pyemailwatcher import Watcher
-import json, requests, datetime, re
+import json, requests, datetime, re, os
 
 def get_todo_list():
 	
@@ -70,7 +70,7 @@ def main():
 	global headers
 	global creds
 	global config
-	with open('basecamphelper/config.json', 'r')  as fp:
+	with open(os.path.join(os.path.dirname(__file__), 'config.json'), 'r')  as fp:
 		config = json.loads(fp.read())
 
 	url =  "https://basecamp.com/%s" % config['account_id']
